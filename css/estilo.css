@@ -293,7 +293,7 @@ html{
 }
 .contacto .col input, .contacto .col textarea{
     display: block;
-    width: 100%;
+    width: 95%;
     padding: 18px;
     border: none;
     margin-bottom: 20px;
@@ -363,6 +363,7 @@ html{
     left:0;
     right:0;
     margin:auto;
+    margin-bottom: -200px;
 }
 .contacto .footer .console-underscore{
     display:inline-block;
@@ -380,8 +381,9 @@ html{
         width: 100%;
         /*text-align: center;*/
     }
-    .habilidades .contenido-seccion .fila .col .cont-barra{
-        justify-content: flex-start;
+    .habilidades .contenido-seccion .fila .col img{
+        width: 25%;
+        /*text-align: center;*/
     }
     .sobremi .contenido-seccion .fila{
         display: block;
@@ -408,6 +410,9 @@ html{
     }
     .contacto .contenido-seccion .fila{
         display: block;
+    }
+    .contacto .contenido-seccion .fila form{
+        margin: auto;
     }
     .contacto .footer{
         margin-bottom: 10px;

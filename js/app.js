@@ -21,7 +21,7 @@ for(var x = 0; x <links.length;x++){
 }
 /************ ANIMACIÓN FOOTER ************/
 // function([string1, string2],target id,[color1,color2])    
-consoleText(['Abel Soler 2023 ©', '¡ Gracias por venir !', '¿ Contactamos ?'], 'text',['#18b6a9','white','IndianRed']);
+consoleText(['Abel Soler 2023 ©', '¡ Gracias por venir !', 'Abel Soler 2023 ©', '¿ Contactamos ?'], 'text',['#18b6a9','white','#18b6a9']);
 
 function consoleText(words, id, colors) {
   if (colors === undefined) colors = ['#fff'];
