@@ -77,7 +77,18 @@ html{
     font-size: 4.5rem;
     letter-spacing: 5px;
 }
+.inicio .contenido-seccion .info h1 span{
+    font-family: 'Russo One', sans-serif;
+    font-size: 4.5rem;
+    letter-spacing: 5px;
+}
 .inicio .contenido-seccion .info h2{
+    font-weight: normal;
+    font-size: 25px;
+    margin-top: -10px;
+    letter-spacing: 2px;
+}
+.inicio .contenido-seccion .info h2 span{
     font-weight: normal;
     font-size: 25px;
     margin-top: -10px;
@@ -363,7 +374,7 @@ html{
     left:0;
     right:0;
     margin:auto;
-    margin-bottom: -200px;
+    margin-bottom: -100px;
 }
 .contacto .footer .console-underscore{
     display:inline-block;
@@ -374,6 +385,18 @@ html{
 
 /* SECCION RESPONSIVE */
 @media screen and (max-width:800px){
+    .inicio .contenido-seccion .info h1{
+        letter-spacing: 9px;
+    }
+    .inicio .contenido-seccion .info h1 span{
+        font-size: 94%;
+        letter-spacing: 2px;
+    }
+    .inicio .contenido-seccion .info h2 span{
+        margin-left: 8%;
+        
+    }
+    
     .habilidades .contenido-seccion .fila{
         display: block;
     }
