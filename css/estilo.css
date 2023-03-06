@@ -682,7 +682,9 @@ html{
     }
 
     .musicplayer .wrapper{
-        width: 83%;
+        width: 95%;
+        /*text-align: center;
+        margin: auto;*/
     }
     .resumen .contenido-seccion .info{
         display: block;
