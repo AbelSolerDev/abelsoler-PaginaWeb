@@ -208,16 +208,280 @@ html{
     margin-bottom: 20px;
     /*display: inline-block;*/
     border-radius: 5%;
-  }
+}
 
-  .habilidades .oculto {
+.habilidades .oculto {
     opacity: 0;
     transition: opacity 0.4s ease-out;
     position: relative;
     left: 0;
     top: 0;
-  }
+}
+  /* SECCION REPRODUCTOR */
+.musicplayer *{
+    box-sizing: border-box;
+}
+.musicplayer *::before, *::after{
+    padding: 0;
+    margin: 0;
+}
+  /*.musicplayer :root{
+    --acuamarina: #18b6a9;
+    --verdeoscuro: #196e67;
+    --lightblack: #515C6F;
+    --white: #e6e6e6;
+    --darkwhite: #cecaca;
+    --pinkshadow: #1fb6a99f;
+    --lightbshadow: rgba(0,0,0,0.15);
+  }*/
+
+.musicplayer {
+    /*    display: flex;*/
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#202020 0%, #18b6a9 100%);
+    padding: 140px 0 100px 0;
+    text-align: center;
+}
+.musicplayer .contenido-seccion{
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 10px;
+}
+.musicplayer .contenido-seccion h2{
+    color: #e6e6e6;
+}
+.musicplayer .contenido-seccion h3{
+        text-transform: uppercase;
+        font-size: 30px;
+        color: #e6e6e6;
+        padding-bottom: 100px;
+}
+.musicplayer .wrapper{
+    margin: auto;
+    width: 380px;
+    padding: 25px 30px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    background: #e6e6e6;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+    font-family: "Abel", sans-serif;
+}
+
+.musicplayer .wrapper i{
+    cursor: pointer;
+}
+.musicplayer .top-bar, .progress-area .song-timer, .controls, .music-list .header, .music-list ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.musicplayer .top-bar i{
+    font-size: 30px;
+    color: #515C6F;
+}
+.musicplayer .top-bar i:first-child{
+    margin-left: -7px;
+}
+.musicplayer .top-bar span{
+    font-size: 18px;
+    margin-left: -3px;
+    color: #515C6F;
+}
+.musicplayer .img-area{
+    width: 100%;
+    height: 256px;
+    overflow: hidden;
+    margin-top: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px #1fb6a99f;
+}
+.musicplayer .img-area img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.musicplayer .song-details{
+    text-align: center;
+    margin: 30px 0;
+}
+.musicplayer .song-details p{
+    color: #515C6F;
+}
+.musicplayer .song-details .name{
+    font-size: 21px;
+}
+.musicplayer .song-details .artist{
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 35px;
+}
+.musicplayer .progress-area{
+    height: 6px;
+    width: 100%;
+    border-radius: 50px;
+    background: #f0f0f0;
+    cursor: pointer;
+}
+.musicplayer .progress-area .progress-bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: linear-gradient(90deg,  #18b6a9 0%, #196e67 100%);
+}
+.musicplayer .progress-bar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    background: inherit;
+    transition: opacity 0.2s ease;
+}
+.musicplayer .progress-area:hover .progress-bar::before{
+    opacity: 1;
+    pointer-events: auto;
+}
+.musicplayer .progress-area .song-timer{
+    margin-top: 2px;
+}
+.musicplayer .song-timer span{
+    font-size: 13px;
+    color: #515C6F;
+}
+.musicplayer .controls{
+    margin: 40px 0 5px 0;
+}
+.musicplayer .controls i{
+    font-size: 28px;
+    user-select: none;
+    background: linear-gradient(#18b6a9 0%, #196e67 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.musicplayer .controls i:nth-child(2), .controls i:nth-child(4){
+    font-size: 43px;
+}
+.musicplayer .controls #prev{
+    margin-right: -13px;
+}
+.musicplayer .controls #next{
+    margin-left: -13px;
+}
+.musicplayer .controls .play-pause{
+    height: 54px;
+    width: 54px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(#e6e6e6 0%, #cecaca 100%);
+    box-shadow: 0px 0px 5px #18b6a9;
+}
+.musicplayer .play-pause::before{
+    position: absolute;
+    content: "";
+    height: 43px;
+    width: 43px;
+    border-radius: inherit;
+    background: linear-gradient(#18b6a9  0%, #196e67 100%);
+}
+.musicplayer .play-pause i{
+    height: 43px;
+    width: 43px;
+    line-height: 43px;
+    text-align: center;
+    background: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+}
   
+.musicplayer .music-list{
+    position: absolute;
+    background: #e6e6e6;
+    width: 100%;
+    left: 0;
+    bottom: -55%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+    transition: all 0.15s ease-out;
+    text-align: left;
+}
+
+.musicplayer .music-list.show{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+.musicplayer .header .row{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: #515C6F;
+}
+.musicplayer .header .row i{
+    cursor: default;
+}
+.musicplayer .header .row span{
+    margin-left: 5px;
+}
+.musicplayer .header #close{
+    font-size: 22px;
+    color: #515C6F;
+}
+.musicplayer .music-list ul{
+    margin: 10px 0;
+    max-height: 260px;
+    overflow: auto;
+}
+.musicplayer .music-list ul::-webkit-scrollbar{
+    width: 0px;
+}
+.musicplayer .music-list ul li{
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    color: #515C6F;
+    border-bottom: 1px solid #E5E5E5;
+}
+.musicplayer .music-list ul li:last-child{
+    border-bottom: 0px;
+}
+.musicplayer .music-list ul li .row span{
+    font-size: 17px;
+}
+.musicplayer .music-list ul li .row p{
+    opacity: 0.9;
+}
+.musicplayer ul li .audio-duration{
+    font-size: 16px;
+}
+.musicplayer ul li.playing{
+    pointer-events: none;
+    color: #196e67 ;
+}
+
+
+
 /* SECCION RESUMEN */
 .resumen{
     background-color: #e6e6e6;
@@ -308,7 +572,7 @@ html{
     padding: 18px;
     border: none;
     margin-bottom: 20px;
-    background-color: #093834;
+    background-color: #196e67;
     color: #fff;
     font-size: 18px;
 }

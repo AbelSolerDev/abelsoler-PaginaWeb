@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/foto.png">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>ABEL SOLER</title>
 </head>
 <body>
@@ -21,6 +22,7 @@
                     <a href="#inicio">Inicio</a>
                     <a href="#sobremi">Sobre mí</a>
                     <a href="#habilidades">Habilidades</a>
+                    <a href="#musicplayer">MusicPlayer</a>
                     <a href="#resumen">Resumen</a>
                     <a href="#contacto">Contacto</a>
                 </nav>
@@ -112,6 +114,59 @@
         </div>
     </section>
 
+    <!-- MusicPlayer -->
+    <section class="musicplayer" id="musicplayer">
+        <div class="contenido-seccion">
+            <h2 class="titulo-seccion">Mis Composiciones</h2>
+            <h3>Esto es una pequeña muestra de mis producciones</h3>
+            <div class="wrapper">
+                <div class="top-bar">
+                    <i class="material-icons">music_note</i>
+                        <span>Music Player</span>
+                    <i class="material-icons">equalizer</i>
+                </div>
+                <div class="img-area">
+                    <img src="" alt="">
+                </div>
+                <div class="song-details">
+                    <p class="name"></p>
+                    <p class="artist"></p>
+                </div>
+                <div class="progress-area">
+                    <div class="progress-bar">
+                        <audio id="main-audio" src=""></audio>
+                    </div>
+                    <div class="song-timer">
+                        <span class="current-time">0:00</span>
+                        <span class="max-duration">0:00</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+                    <i id="prev" class="material-icons">skip_previous</i>
+                    <div class="play-pause">
+                        <i class="material-icons play">play_arrow</i>
+                    </div>
+                    <i id="next" class="material-icons">skip_next</i>
+                    <i id="more-music" class="material-icons">queue_music</i>
+                </div>
+                <div class="music-list">
+                    <div class="header">
+                        <div class="row">
+                            <i class= "list material-icons">queue_music</i>
+                            <span>Music list</span>
+                        </div>
+                        <i id="close" class="material-icons">close</i>
+                    </div>
+                    <ul>
+                        <!-- Aquí la lista de li que viene de JS -->
+                    </ul>
+                </div>
+            </div> 
+        </div>    
+    </section>
+    
+
     <!-- SECCION RESUMEN -->
     <section class="resumen" id="resumen">
         <div class="contenido-seccion">
@@ -186,7 +241,7 @@
                         <tr>
                             <td>
                                 <h4>Gestor de Activos Inmobiliarios</h4>
-                                <p>GRUPO SOLUZONE SL</p>
+                                <p>Grupo Soluzone SL</p>
                                
                             </td>
                         </tr>
@@ -203,7 +258,7 @@
                         <tr>
                             <td>
                                 <h4>Productor</h4>
-                                <p>Hobbie</p>
+                                <p>Freelance</p>
                             </td>
                         </tr>
                     </table>
@@ -283,6 +338,8 @@
         </div>
     </section>
 
+    <script src="js/music-list.js"></script>
     <script src="js/app.js"></script>
+
 </body>
 </html>
