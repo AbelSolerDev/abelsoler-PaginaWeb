@@ -658,9 +658,17 @@ html{
     }
     .inicio .contenido-seccion .info h2 span{
         margin-left: 8%;
-        
     }
-    
+
+    .sobremi .contenido-seccion .fila{
+        display: block;
+    }
+    .sobremi .contenido-seccion .fila .col{
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
     .habilidades .contenido-seccion .fila{
         display: block;
     }
@@ -672,13 +680,9 @@ html{
         width: 25%;
         /*text-align: center;*/
     }
-    .sobremi .contenido-seccion .fila{
-        display: block;
-    }
-    .sobremi .contenido-seccion .fila .col{
-        width: 80%;
-        margin: auto;
-        margin-top: 20px;
+
+    .musicplayer .wrapper{
+        width: 85%;
     }
     .resumen .contenido-seccion .info{
         display: block;
