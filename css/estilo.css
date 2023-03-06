@@ -202,21 +202,30 @@ html{
 
 .habilidades img {
     width: 20%;
-    /*height: 20px;*/
     margin: 0.8%;
     margin-top: 30px;
     margin-bottom: 20px;
-    /*display: inline-block;*/
     border-radius: 5%;
+    /* cambia el estilo de fondo por efecto de filtro 
+    filter: grayscale(0.5) brightness(50%);*/
+    transition: .5s ease-in-out;
 }
 
-.habilidades .oculto {
-    opacity: 0;
-    transition: opacity 0.4s ease-out;
-    position: relative;
-    left: 0;
-    top: 0;
+.habilidades img.hover-color {
+  /* usado para aplicar el efecto de sobre-fondo */
+  filter: none; 
+  transform: scale(1.02);
+  /*Color deseado para la imagen cuando el mouse esté encima*/
+  background-color: #18b6a9;
+  /*Agregar suavidad a la transición*/
+  transition: background-color 0.6s ease-in-out;
 }
+
+.habilidades img.hover-color.brightness-half {
+    /* Cambiar sobre todo el brillo de la imagen */
+    filter: brightness(50%);
+}
+
   /* SECCION REPRODUCTOR */
 .musicplayer *{
     box-sizing: border-box;
@@ -225,15 +234,6 @@ html{
     padding: 0;
     margin: 0;
 }
-  /*.musicplayer :root{
-    --acuamarina: #18b6a9;
-    --verdeoscuro: #196e67;
-    --lightblack: #515C6F;
-    --white: #e6e6e6;
-    --darkwhite: #cecaca;
-    --pinkshadow: #1fb6a99f;
-    --lightbshadow: rgba(0,0,0,0.15);
-  }*/
 
 .musicplayer {
     /*    display: flex;*/
@@ -643,7 +643,7 @@ html{
 .contacto .footer .console-underscore{
     display:inline-block;
     position:relative;
-    top:-0.14em;
+    /*top:-0.14em;*/
     left:10px;
   }
 

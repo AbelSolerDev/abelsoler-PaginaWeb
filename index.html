@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/foto.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>ABEL SOLER</title>
@@ -93,22 +94,22 @@
 
             <div class="fila">
                 <div class="col">
-                    <img src="img/LOGOS PROGRAMAS/HTML.png" alt="html">
-                    <img src="img/LOGOS PROGRAMAS/CSS.png" alt="CSS">
-                    <img src="img/LOGOS PROGRAMAS/jscript.png" alt="js">
+                    <img src="img/LOGOS PROGRAMAS/HTML.png" alt="html" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/LOGOS PROGRAMAS/CSS.png" alt="CSS" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/LOGOS PROGRAMAS/jscript.png" alt="js" data-aos="fade-up" data-aos-delay="300">
                 </div>
                 <div class="col">
-                    <img src="img/LOGOS PROGRAMAS/VSCODE.png" alt="VSCODE">
-                    <img src="img/LOGOS PROGRAMAS/mysql.png" alt="mysql">
-                    <img src="img/LOGOS PROGRAMAS/git.png" alt="git">
+                    <img src="img/LOGOS PROGRAMAS/VSCODE.png" alt="VSCODE" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/LOGOS PROGRAMAS/mysql.png" alt="mysql" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/LOGOS PROGRAMAS/git.png" alt="git" data-aos="fade-up" data-aos-delay="300">
                 </div>
             </div>
             <h3>Tengo conocimientos en</h3>
             <div class="fila">
                 <div class="col">
-                    <img src="img/LOGOS PROGRAMAS/flstudio.png" alt="flstudio">
-                    <img src="img/LOGOS PROGRAMAS/photoshop.png" alt="photoshop">
-                    <img src="img/LOGOS PROGRAMAS/autocad.png" alt="autocad">
+                    <img src="img/LOGOS PROGRAMAS/flstudio.png" alt="flstudio" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/LOGOS PROGRAMAS/photoshop.png" alt="photoshop" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/LOGOS PROGRAMAS/autocad.png" alt="autocad" data-aos="fade-up" data-aos-delay="300">
                 </div>
             </div>
         </div>
@@ -331,7 +332,7 @@
             <div class='console-container'>
                 <span id='text'></span>
                 <div class='console-underscore' id='console'>
-                    &#95;
+                    &#124;
                 </div>
             </div>
             <!--<h4> { Abel Soler 2023 © } </h4>-->
@@ -340,6 +341,17 @@
 
     <script src="js/music-list.js"></script>
     <script src="js/app.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Inicializar AOS
+            AOS.init({
+                duration: 800, // Duración en milisegundos de las animaciones, omita para el predeterminado (valor recomendado)
+                easing: "ease-out", // Función de curva de tiempo utilizada para la animación, ligeramente mejor que "ease-in-out"
+                offset: 50, // Desplazamiento (en px) desde el borde superior de la ventana visual antes de activar una animación determinada,
+                delay: 100, // Retrasar opcionalmente el inicio de una animación (medido en ms), útil para fusionar animaciones en ráfagas.
+            });
+        });
+      </script>
 </body>
 </html>

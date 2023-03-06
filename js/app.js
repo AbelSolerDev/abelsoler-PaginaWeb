@@ -1,3 +1,4 @@
+
 //Menu lateral
 var menu_visible = false;
 let menu = document.getElementById("nav");
@@ -11,6 +12,7 @@ function mostrarOcultarMenu(){
         menu_visible = false;
     }
 }
+
 //oculto el menu una vez que selecciono una opción
 let links = document.querySelectorAll("nav a");
 for(var x = 0; x <links.length;x++){
@@ -19,92 +21,107 @@ for(var x = 0; x <links.length;x++){
         menu_visible = false;
     }
 }
-/************ ANIMACIÓN FOOTER ************/
-// function([string1, string2],target id,[color1,color2])    
-consoleText(['Abel Soler 2023 ©', '¡ Gracias por venir !', 'Abel Soler 2023 ©', '¿ Contactamos ?'], 'text',['#18b6a9','white','#18b6a9']);
-
-function consoleText(words, id, colors) {
-  if (colors === undefined) colors = ['#fff'];
+/************ ANIMACIÓN FOOTER CONSOLE ************/
+//Introduzco los datos para pasarlos por la función.
+// function([string1, string2],target id,[color1,color2])  
+mostrarTextoEnConsola(['Abel Soler 2023 ©', '¡ Gracias por venir !', 'Abel Soler 2023 ©', '¿ Contactamos ?'], 'text',['#18b6a9','white','#18b6a9']);
+// Función que muestra texto en la consola
+function mostrarTextoEnConsola(palabras, id, colores) {
+  // En caso de no proporcionar el parámetro de colores, se establece un color predeterminado
+  if (colores === undefined) colores = ['#fff'];
+  
+  // Se inicializan las variables
   var visible = true;
-  var con = document.getElementById('console');
-  var letterCount = 1;
+  var contenedor = document.getElementById('console');
+  var letraActual = 1;
   var x = 1;
-  var waiting = false;
-  var target = document.getElementById(id)
-  target.setAttribute('style', 'color:' + colors[0])
+  var esperando = false;
+  var objetivo = document.getElementById(id)
+  
+  // Se establece el primer color
+  objetivo.setAttribute('style', 'color:' + colores[0])
+  
+  // Uso de setInterval para ejecutar una tarea cada cierto tiempo
   window.setInterval(function() {
-
-    if (letterCount === 0 && waiting === false) {
-      waiting = true;
-      target.innerHTML = words[0].substring(0, letterCount)
+    // Si es la primera letra y no está esperando
+    if (letraActual === 0 && esperando === false) {
+      esperando = true;
+      objetivo.innerHTML = palabras[0].substring(0, letraActual)
+      
+      // Se espera 1 segundo antes de continuar con el siguiente cambio de palabra/color
       window.setTimeout(function() {
-        var usedColor = colors.shift();
-        colors.push(usedColor);
-        var usedWord = words.shift();
-        words.push(usedWord);
+        var colorUsado = colores.shift();
+        colores.push(colorUsado);
+        var palabraUsada = palabras.shift();
+        palabras.push(palabraUsada);
         x = 1;
-        target.setAttribute('style', 'color:' + colors[0])
-        letterCount += x;
-        waiting = false;
+        objetivo.setAttribute('style', 'color:' + colores[0])
+        letraActual += x;
+        esperando = false;
       }, 1000)
-    } else if (letterCount === words[0].length + 1 && waiting === false) {
-      waiting = true;
+      
+    // Si llega al final de la palabra y no está esperando
+    } else if (letraActual === palabras[0].length + 1 && esperando === false) {
+      esperando = true;
       window.setTimeout(function() {
         x = -1;
-        letterCount += x;
-        waiting = false;
+        letraActual += x;
+        esperando = false;
       }, 1000)
-    } else if (waiting === false) {
-      target.innerHTML = words[0].substring(0, letterCount)
-      letterCount += x;
+      
+    // Si no está esperando, se escribe la palabra en progreso
+    } else if (esperando === false) {
+      objetivo.innerHTML = palabras[0].substring(0, letraActual)
+      letraActual += x;
     }
   }, 120)
+  
+  // Tarea que se repite cada cierto tiempo para alternar el cursor de la consola
   window.setInterval(function() {
+    // Si está visible, ocultarlo
     if (visible === true) {
-      con.className = 'console-underscore hidden'
+      contenedor.className = 'console-underscore hidden'
       visible = false;
-
+    // Si no está visible, mostrarlo
     } else {
-      con.className = 'console-underscore'
-
+      contenedor.className = 'console-underscore'
       visible = true;
     }
   }, 400)
 };
 
-/************ ESTRUCTURA APARICIÓN LOGOS ************/
-/*
-function mostrarImagenes() {
-    const imagenes = document.querySelectorAll('.oculto');
-    
-    const opciones = {
-      rootMargin: '0px',
-      threshold: 0.5 // la imagen se muestra cuando al menos el 50% está en el viewport
-    };
-    
-    const observer = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('oculto');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, opciones);
-    
-    imagenes.forEach(imagen => {
-      observer.observe(imagen);
-    });
-  };*/
 
-/*detecto el scrolling del mouse para aplicar la animación de la barra
-window.onscroll = function(){
-    mostrarImagenes();
-}*/
+
+/************ ESTRUCTURA PINTAR LOGOS ************/
+document.addEventListener("DOMContentLoaded", function() {
+  // Selección de todos los elementos img en la página
+  var imagenes = document.querySelectorAll('.habilidades img');
+
+  // Agregar un listener de eventos a cada imagen
+  for (var i = 0; i < imagenes.length; i++) {
+    imagenes[i].addEventListener('mouseover', function() {
+      this.style.filter = "brightness(50%) hue-rotate(100deg)";
+    });
+
+    imagenes[i].addEventListener('mouseout', function() {
+      this.style.filter = "none";
+    });
+  }
+});
+
+
+
+
+
 
 
 
 /************ REREPRODUCTOR DE MUISCA ************/
+/*Este es un reproductor de música que tiene varias funciones para reproducir, 
+  pausar, pasar a la siguiente o anterior canción. También tiene opciones para repetir o 
+  mezclar la lista de reproducción y controlar el progreso de la canción.*/
 
+/*variables que contienen elementos HTML como divs, botones y etiquetas de audio.*/ 
 const wrapper = document.querySelector(".wrapper"),
 musicImg = wrapper.querySelector(".img-area img"),
 musicName = wrapper.querySelector(".song-details .name"),
@@ -119,14 +136,18 @@ musicList = wrapper.querySelector(".music-list"),
 moreMusicBtn = wrapper.querySelector("#more-music"),
 closemoreMusic = musicList.querySelector("#close");
 
+/*variable numérica que almacena el número índice de la canción actual en la lista de todas las canciones (allMusic).*/
 let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
+//variable booleana que indica si la música está pausada o no.
 isMusicPaused = true;
 
+/*El evento "load" llama a la función loadMusic con un número aleatorio generado por Math.floor.
+  Esta función actualiza el nombre de la canción, el artista y la imagen utilizando los datos de la variable allMusic.*/
 window.addEventListener("load", ()=>{
   loadMusic(musicIndex);
   playingSong(); 
 });
-
+// Carga la música en el reproductor
 function loadMusic(indexNumb){
   musicName.innerText = allMusic[indexNumb - 1].name;
   musicArtist.innerText = allMusic[indexNumb - 1].artist;
@@ -134,101 +155,126 @@ function loadMusic(indexNumb){
   mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
 }
 
-//play music function
+// Función para reproducir la música
+/*reproduce la canción, cambia la clase CSS del envoltorio de la aplicación 
+  y el icono del botón de reproducir/pausar. */
 function playMusic(){
   wrapper.classList.add("paused");
   playPauseBtn.querySelector("i").innerText = "pause";
   mainAudio.play();
 }
 
-//pause music function
+// Función para pausar la música
+/*pausa la canción, elimina la clase CSS del envoltorio de la aplicación 
+  y cambia el icono del botón de reproducir/pausar.*/
 function pauseMusic(){
   wrapper.classList.remove("paused");
   playPauseBtn.querySelector("i").innerText = "play_arrow";
   mainAudio.pause();
 }
 
-//prev music function
+// Función para retroceder la música
+/*La función prevMusic disminuye el valor de musicIndex en uno y carga la canción anterior 
+  utilizando loadMusic. Si musicIndex es menor que 1, se establece en allMusic.length. 
+  Entonces, llama a playMusic y luego a playingSong. */
 function prevMusic(){
-  musicIndex--; //decrement of musicIndex by 1
-  //if musicIndex is less than 1 then musicIndex will be the array length so the last music play
+  musicIndex--; /// Si el índice es menor que 1, 
+  //se establecerá en la longitud del array para que se reproduzca la última música
   musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
   loadMusic(musicIndex);
   playMusic();
   playingSong(); 
 }
 
-//next music function
+// Función para avanzar la música
+/*La función nextMusic aumenta el valor de musicIndex en uno y carga la siguiente canción 
+  utilizando loadMusic. Si musicIndex es mayor que allMusic.length, se establece en 1. 
+  Luego llama a playMusic y luego a playingSong. */
 function nextMusic(){
-  musicIndex++; //increment of musicIndex by 1
-  //if musicIndex is greater than array length then musicIndex will be 1 so the first music play
+  musicIndex++; // Si el índice es mayor que la longitud del array, 
+  //se establecerá en 1 para que se reproduzca la primera música.
   musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
   loadMusic(musicIndex);
   playMusic();
   playingSong(); 
 }
 
-// play or pause button event
+// Evento del botón de reproducir o pausar la música
+/* El evento del botón de reproducir/pausar llama a pauseMusic o playMusic 
+  según el estado actual de la música. Después llama a playingSong.*/
 playPauseBtn.addEventListener("click", ()=>{
   const isMusicPlay = wrapper.classList.contains("paused");
-  //if isPlayMusic is true then call pauseMusic else call playMusic
+  // Si la música está siendo reproducida, llama a la función 'pauseMusic', 
+  //  de lo contrario llama a la función 'playMusic'.
   isMusicPlay ? pauseMusic() : playMusic();
   playingSong();
 });
 
-//prev music button event
+/*Los eventos de los botones anterior y siguiente llaman a prevMusic y nextMusic, respectivamente.*/
+// Evento del botón para retroceder una canción
 prevBtn.addEventListener("click", ()=>{
   prevMusic();
 });
-
-//next music button event
+// Evento del botón para avanzar una canción
 nextBtn.addEventListener("click", ()=>{
   nextMusic();
 });
 
-// update progress bar width according to music current time
+
+// Actualiza la barra de progreso según el tiempo actual de la música
+/*El evento "timeupdate" recalcula el ancho de la barra de progreso según el tiempo transcurrido 
+  y lo muestra en la pantalla junto al tiempo actual de la canción y la duración total. 
+  Esto se hace calculando el tiempo actual de la canción y la duración total mediante 
+  la propiedad currentTime y duration de mainAudio. */
 mainAudio.addEventListener("timeupdate", (e)=>{
-  const currentTime = e.target.currentTime; //getting playing song currentTime
-  const duration = e.target.duration; //getting playing song total duration
+  const currentTime = e.target.currentTime; //mientras se reproduce la canción currentTime
+  const duration = e.target.duration; //mientras se reproduce la canción total duration
   let progressWidth = (currentTime / duration) * 100;
   progressBar.style.width = `${progressWidth}%`;
 
   let musicCurrentTime = wrapper.querySelector(".current-time"),
   musicDuartion = wrapper.querySelector(".max-duration");
   mainAudio.addEventListener("loadeddata", ()=>{
-    // update song total duration
+    // Actualiza la duración total de la música
     let mainAdDuration = mainAudio.duration;
     let totalMin = Math.floor(mainAdDuration / 60);
     let totalSec = Math.floor(mainAdDuration % 60);
-    if(totalSec < 10){ //if sec is less than 10 then add 0 before it
+    if(totalSec < 10){  // Si los segundos son menores que 10, agrega un 0 antes.
       totalSec = `0${totalSec}`;
     }
     musicDuartion.innerText = `${totalMin}:${totalSec}`;
   });
-  // update playing song current time
+   // Actualiza el tiempo actual de la música que se está reproduciendo
   let currentMin = Math.floor(currentTime / 60);
   let currentSec = Math.floor(currentTime % 60);
-  if(currentSec < 10){ //if sec is less than 10 then add 0 before it
+  if(currentSec < 10){ // Si los segundos son menores que 10, agrega un 0 antes.
     currentSec = `0${currentSec}`;
   }
   musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
 });
 
-// update playing song currentTime on according to the progress bar width
+
+// Actualiza el tiempo actual de la música según el ancho de la barra de progreso.
+/*El evento "click" en el área de progreso ajusta el tiempo de reproducción de la 
+  canción según dónde hagan clic los usuarios en la barra de progreso. 
+  También llama a playMusic y luego a playingSong. */
 progressArea.addEventListener("click", (e)=>{
-  let progressWidth = progressArea.clientWidth; //getting width of progress bar
-  let clickedOffsetX = e.offsetX; //getting offset x value
-  let songDuration = mainAudio.duration; //getting song total duration
+  let progressWidth = progressArea.clientWidth; //obtener el ancho de la barra de progreso
+  let clickedOffsetX = e.offsetX; //obteniendo el valor compensado x
+  let songDuration = mainAudio.duration; //obtener la duración total de la canción
   
   mainAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
-  playMusic(); //calling playMusic function
+  playMusic(); //llamando a la función playMusic
   playingSong();
 });
 
-//change loop, shuffle, repeat icon onclick
+//cambiar bucle, reproducción aleatoria, repetir icono al hacer click
 const repeatBtn = wrapper.querySelector("#repeat-plist");
+/*El evento "click" en el botón de repetición cambia el icono y el título del botón 
+  según lo que el usuario desea hacer: repetir la lista de reproducción entera, 
+  repetir solo una canción o mezclar aleatoriamente. */
 repeatBtn.addEventListener("click", ()=>{
-  let getText = repeatBtn.innerText; //getting this tag innerText
+  let getText = repeatBtn.innerText; //obteniendo esta etiqueta innerText
   switch(getText){
     case "repeat":
       repeatBtn.innerText = "repeat_one";
@@ -245,26 +291,31 @@ repeatBtn.addEventListener("click", ()=>{
   }
 });
 
-//code for what to do after song ended
+//código de qué hacer después de que termine la canción.
+/*El evento "ended" se activa cuando la canción llega al final. 
+  Depende del modo de repetición definido por el usuario: después de cada canción, 
+  la misma canción o una canción aleatoria se reproducen a través de las funciones nextMusic, 
+  loadMusic y playMusic.
+ */
 mainAudio.addEventListener("ended", ()=>{
-  // we'll do according to the icon means if user has set icon to
-  // loop song then we'll repeat the current song and will do accordingly
-  let getText = repeatBtn.innerText; //getting this tag innerText
+  // lo haremos de acuerdo con el ícono significa que si el usuario ha configurado el ícono
+  // para repetir la canción, repetiremos la canción actual y lo haremos en consecuencia
+  let getText = repeatBtn.innerText; //gobteniendo esta etiqueta innerText
   switch(getText){
     case "repeat":
-      nextMusic(); //calling nextMusic function
+      nextMusic(); //llamando a la función nextMusic 
       break;
     case "repeat_one":
-      mainAudio.currentTime = 0; //setting audio current time to 0
-      loadMusic(musicIndex); //calling loadMusic function with argument, in the argument there is a index of current song
-      playMusic(); //calling playMusic function
+      mainAudio.currentTime = 0; //establecer el tiempo actual de audio en 0
+      loadMusic(musicIndex); //llamando a la función loadMusic con argumento, en el argumento hay un index de la canción actual
+      playMusic(); //llamando a la función playMusic
       break;
     case "shuffle":
-      let randIndex = Math.floor((Math.random() * allMusic.length) + 1); //genereting random index/numb with max range of array length
+      let randIndex = Math.floor((Math.random() * allMusic.length) + 1); //generar índice/número aleatorio con rango máximo de longitud de matriz
       do{
         randIndex = Math.floor((Math.random() * allMusic.length) + 1);
-      }while(musicIndex == randIndex); //this loop run until the next random number won't be the same of current musicIndex
-      musicIndex = randIndex; //passing randomIndex to musicIndex
+      }while(musicIndex == randIndex); //este bucle se ejecuta hasta que el próximo número aleatorio no sea el mismo que el actual musicIndex
+      musicIndex = randIndex; //pasando randomIndex a musicIndex
       loadMusic(musicIndex);
       playMusic();
       playingSong();
@@ -272,7 +323,9 @@ mainAudio.addEventListener("ended", ()=>{
   }
 });
 
-//show music list onclick of music icon
+//mostrar la lista de música al hacer clic en el icono de la música
+/*Los eventos "click" en los botones de "más música" y "cerrar más música" 
+  permiten al usuario ver y cerrar la lista completa de canciones disponibles.*/
 moreMusicBtn.addEventListener("click", ()=>{
   musicList.classList.toggle("show");
 });
@@ -281,9 +334,12 @@ closemoreMusic.addEventListener("click", ()=>{
 });
 
 const ulTag = wrapper.querySelector("ul");
-// let create li tags according to array length for list
+// vamos a crear etiquetas "li" de acuerdo con la longitud de la matriz para la lista
+/*Un ciclo for crea una lista de todas las canciones ("li"Tag) al insertar los nombres 
+  y artistas utilizando los datos de la variable allMusic. 
+  Dentro de ese ciclo se definen también los atributos del audio de cada canción. */
 for (let i = 0; i < allMusic.length; i++) {
-  //let's pass the song name, artist from the array
+  //pasemos el nombre de la canción, artista de la matriz
   let liTag = `<li li-index="${i + 1}">
                 <div class="row">
                   <span>${allMusic[i].name}</span>
@@ -292,7 +348,7 @@ for (let i = 0; i < allMusic.length; i++) {
                 <span id="${allMusic[i].src}" class="audio-duration">3:40</span>
                 <audio class="${allMusic[i].src}" src="songs/${allMusic[i].src}.mp3"></audio>
               </li>`;
-  ulTag.insertAdjacentHTML("beforeend", liTag); //inserting the li inside ul tag
+  ulTag.insertAdjacentHTML("beforeend", liTag); //insertando la etiqueta "li" dentro de "ul"
 
   let liAudioDuartionTag = ulTag.querySelector(`#${allMusic[i].src}`);
   let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
@@ -300,15 +356,17 @@ for (let i = 0; i < allMusic.length; i++) {
     let duration = liAudioTag.duration;
     let totalMin = Math.floor(duration / 60);
     let totalSec = Math.floor(duration % 60);
-    if(totalSec < 10){ //if sec is less than 10 then add 0 before it
+    if(totalSec < 10){ //si sec es menor que 10, agrega 0 antes
       totalSec = `0${totalSec}`;
     };
-    liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //passing total duation of song
-    liAudioDuartionTag.setAttribute("t-duration", `${totalMin}:${totalSec}`); //adding t-duration attribute with total duration value
+    liAudioDuartionTag.innerText = `${totalMin}:${totalSec}`; //pasando la duración total de la canción
+    liAudioDuartionTag.setAttribute("t-duration", `${totalMin}:${totalSec}`); //agregando el atributo t-duration con el valor de duración total
   });
 }
 
-//play particular song from the list onclick of li tag
+//Reproduzca una canción en particular de la lista al hacer clic en la etiqueta "li"
+/*La función playingSong muestra en verde la canción que está siendo reproducida en 
+  la lista de canciones mientras que devulve a su estado normal la que dejó de serlo. */
 function playingSong(){
   const allLiTag = ulTag.querySelectorAll("li");
   
@@ -321,7 +379,7 @@ function playingSong(){
       audioTag.innerText = adDuration;
     }
 
-    //if the li tag index is equal to the musicIndex then add playing class in it
+    //si el índice de la etiqueta "li" es igual a "musicIndex", entonces agregue class de reproducción en él
     if(allLiTag[j].getAttribute("li-index") == musicIndex){
       allLiTag[j].classList.add("playing");
       audioTag.innerText = "Playing";
@@ -331,11 +389,16 @@ function playingSong(){
   }
 }
 
-//particular li clicked function
+//función particular "li" clicada
+/*La función clicked(element) toma el li-index de la canción en que se ha 
+  hecho clic en la lista de canciones y llama a loadMusic, playMusic y playingSong. */
 function clicked(element){
   let getLiIndex = element.getAttribute("li-index");
-  musicIndex = getLiIndex; //updating current song index with clicked li index
+  musicIndex = getLiIndex; //actualizando el índice de la canción actual con el índice "li" pulsado
   loadMusic(musicIndex);
   playMusic();
   playingSong();
 }
+
+
+
