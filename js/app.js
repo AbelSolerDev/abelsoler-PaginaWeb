@@ -147,6 +147,7 @@ isMusicPaused = true;
 window.addEventListener("load", ()=>{
   loadMusic(musicIndex);
   playingSong(); 
+  /*renderFrame();*/
 });
 /*La función 'loadMusic' carga la música según el índice que se le proporciona*/
 function loadMusic(indexNumb){
@@ -187,7 +188,6 @@ function prevMusic(){
   loadMusic(musicIndex);
   playMusic();
   playingSong(); 
-  renderFrame()
 }
 
 // Función para avanzar la música
@@ -201,7 +201,6 @@ function nextMusic(){
   loadMusic(musicIndex);
   playMusic();
   playingSong(); 
-  renderFrame()
 }
 
 // Evento del botón de reproducir o pausar la música
@@ -213,7 +212,6 @@ playPauseBtn.addEventListener("click", ()=>{
   //  de lo contrario llama a la función 'playMusic'.
   isMusicPlay ? pauseMusic() : playMusic();
   playingSong();
-  renderFrame()
 });
 
 /*Los eventos de los botones anterior y siguiente llaman a prevMusic y nextMusic, respectivamente.*/
@@ -404,11 +402,10 @@ function clicked(element){
   loadMusic(musicIndex);
   playMusic();
   playingSong();
-  renderFrame()
 }
 
 
-/**SECCIÓN DE  VISUALIZACIÓN DE FRECUENCIAS**/
+/**SECCIÓN DE  VISUALIZACIÓN DE FRECUENCIAS*
 
 var context = new AudioContext();
 var src = context.createMediaElementSource(mainAudio);
@@ -449,13 +446,14 @@ function renderFrame() {
     var g = 250 * (i/bufferLength);
     var b = 50;
 
-    /*ctx.fillStyle = "#18b6a9";*/
+    /*ctx.fillStyle = "#18b6a9";
     ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
     ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
 
     x += barWidth + 1;
   }
-}
+}*/
+
 /* *********OTRO COLOR DIFERENTE*******
 function renderFrame() {
   requestAnimationFrame(renderFrame);
