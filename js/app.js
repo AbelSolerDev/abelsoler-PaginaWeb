@@ -165,7 +165,6 @@ function playMusic(){
   playPauseBtn.querySelector("i").innerText = "pause";
   // Se reproduce la canción utilizando la etiqueta de audio del reproductor
   mainAudio.play();
-  renderFrame()
 }
 
 // Función para pausar la música
@@ -188,6 +187,7 @@ function prevMusic(){
   loadMusic(musicIndex);
   playMusic();
   playingSong(); 
+  renderFrame()
 }
 
 // Función para avanzar la música
@@ -201,6 +201,7 @@ function nextMusic(){
   loadMusic(musicIndex);
   playMusic();
   playingSong(); 
+  renderFrame()
 }
 
 // Evento del botón de reproducir o pausar la música
@@ -212,6 +213,7 @@ playPauseBtn.addEventListener("click", ()=>{
   //  de lo contrario llama a la función 'playMusic'.
   isMusicPlay ? pauseMusic() : playMusic();
   playingSong();
+  renderFrame()
 });
 
 /*Los eventos de los botones anterior y siguiente llaman a prevMusic y nextMusic, respectivamente.*/
@@ -402,6 +404,7 @@ function clicked(element){
   loadMusic(musicIndex);
   playMusic();
   playingSong();
+  renderFrame()
 }
 
 
