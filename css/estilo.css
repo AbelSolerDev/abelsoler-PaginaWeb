@@ -229,7 +229,7 @@ html{
 /* SECCION MIS PROYECTOS */
 .proyectos{
     /*background-color: #e6e6e6;*/
-    background: linear-gradient(#202020 0%, #18b6a9 100%);
+    background: linear-gradient(#18b6a9 0%,  #202020 100%);
     padding: 100px 0 100px 0;
     text-align: center;
 }
@@ -277,7 +277,7 @@ html{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .7);
+    background: #e6e6e6/*rgba(0, 0, 0, .7)*/;
     opacity: 0;
     cursor: pointer;
     transition: .4s;
@@ -285,10 +285,11 @@ html{
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    color: #fe9018;
+    color: #18b6a9;
+    font-size:  40px;
 }
 .proyectos .fila .trabajo .desc:hover{
-    opacity: 1;
+    opacity: 0.8;
 }
 .proyectos .fila img{
    width: 100%;
@@ -307,12 +308,26 @@ html{
 .musicplayer {
     /*    display: flex;*/
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
     min-height: 100vh;
-    background: linear-gradient(#18b6a9 0%, #e6e6e6 100%);
-    padding: 140px 0 100px 0;
+    /*background: linear-gradient(#18b6a9 0%, #e6e6e6 100%);*/
+    background-color: #202020;
+    padding: 140px 0 0px 0;
     text-align: center;
+    z-index: -1;
 }
+
+/*frecuenciador de sonido*/
+.musicplayer #canvas {
+    position: absolute;
+    margin-top: -40px;
+    left: 35%;
+    width: 30%;
+    height: 70%;
+    z-index: 0;
+    /*mix-blend-mode: multiply;*/
+}
+
 .musicplayer .contenido-seccion{
     max-width: 1000px;
     margin: auto;
@@ -320,12 +335,16 @@ html{
 }
 .musicplayer .contenido-seccion h2{
     color: #e6e6e6;
+    z-index: 4;
+    /*mix-blend-mode: exclusion;*/
 }
 .musicplayer .contenido-seccion h3{
         text-transform: uppercase;
         font-size: 30px;
         color: #e6e6e6;
         padding-bottom: 100px;
+        z-index: 5;
+        /*mix-blend-mode: exclusion;*/
 }
 .musicplayer .wrapper{
     margin: auto;
@@ -337,6 +356,8 @@ html{
     background: #e6e6e6;
     box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
     font-family: "Abel", sans-serif;
+    z-index: 3;
+
 }
 
 .musicplayer .wrapper i{
@@ -553,8 +574,8 @@ html{
 
 /* SECCION RESUMEN */
 .resumen{
-    background: linear-gradient(#e6e6e6 88%, #202020 100%);
-    /*background-color: #e6e6e6;*/
+    /*background: linear-gradient(#e6e6e6 88%, #202020 100%);*/
+    background-color: #e6e6e6;
     padding: 140px 0 100px 0;
     text-align: center;
 }
@@ -718,7 +739,7 @@ html{
   }
 
 /* SECCION RESPONSIVE */
-@media screen and (max-width:800px){
+@media screen and (max-width:750px){
     .inicio .contenido-seccion .info h1{
         letter-spacing: 9px;
     }
@@ -750,7 +771,18 @@ html{
         width: 25%;
         /*text-align: center;*/
     }
-
+    /*frecuenciador de sonido*/
+    /*.musicplayer {
+        padding-bottom: -300px;
+    }*/
+    .musicplayer #canvas {
+        position: absolute;
+        left: 0;
+        /*margin-top: -50px;*/
+        width: 100%;
+        height: 90%;
+        /*mix-blend-mode: multiply;*/
+    }
     .musicplayer .wrapper{
         width: 95%;
         /*text-align: center;

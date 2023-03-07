@@ -129,6 +129,7 @@ musicArtist = wrapper.querySelector(".song-details .artist"),
 playPauseBtn = wrapper.querySelector(".play-pause"),
 prevBtn = wrapper.querySelector("#prev"),
 nextBtn = wrapper.querySelector("#next"),
+// Se agrega esta variable para usar la etiqueta audio del reproductor
 mainAudio = wrapper.querySelector("#main-audio"),
 progressArea = wrapper.querySelector(".progress-area"),
 progressBar = progressArea.querySelector(".progress-bar"),
@@ -147,11 +148,12 @@ window.addEventListener("load", ()=>{
   loadMusic(musicIndex);
   playingSong(); 
 });
-// Carga la música en el reproductor
+/*La función 'loadMusic' carga la música según el índice que se le proporciona*/
 function loadMusic(indexNumb){
   musicName.innerText = allMusic[indexNumb - 1].name;
   musicArtist.innerText = allMusic[indexNumb - 1].artist;
   musicImg.src = `img/reproductor/${allMusic[indexNumb - 1].src}.jpg`;
+  //se establece la fuente de audio cargando la canción seleccionada
   mainAudio.src = `songs/${allMusic[indexNumb - 1].src}.mp3`;
 }
 
@@ -161,7 +163,9 @@ function loadMusic(indexNumb){
 function playMusic(){
   wrapper.classList.add("paused");
   playPauseBtn.querySelector("i").innerText = "pause";
+  // Se reproduce la canción utilizando la etiqueta de audio del reproductor
   mainAudio.play();
+  renderFrame()
 }
 
 // Función para pausar la música
@@ -401,4 +405,72 @@ function clicked(element){
 }
 
 
+/**SECCIÓN DE  VISUALIZACIÓN DE FRECUENCIAS**/
 
+var context = new AudioContext();
+var src = context.createMediaElementSource(mainAudio);
+var analyser = context.createAnalyser();
+
+var canvas = document.getElementById("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var ctx = canvas.getContext("2d");
+
+src.connect(analyser);
+analyser.connect(context.destination);
+
+analyser.fftSize = 256;
+var bufferLength = analyser.frequencyBinCount;
+console.log(bufferLength);
+var dataArray = new Uint8Array(bufferLength);
+var WIDTH = canvas.width;
+var HEIGHT = canvas.height;
+var barWidth = (WIDTH / bufferLength) * 2.5;
+var barHeight;
+var x = 0;
+
+//esta es la función que actualiza el visualizador en cada fotograma
+function renderFrame() {
+  requestAnimationFrame(renderFrame);
+
+  x = 0;
+  analyser.getByteFrequencyData(dataArray);
+  
+  ctx.fillStyle = "#202020";
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  for (var i = 0; i < bufferLength; i++) {
+    barHeight = dataArray[i];
+    
+    var r = barHeight + (25 * (i/bufferLength));
+    var g = 250 * (i/bufferLength);
+    var b = 50;
+
+    /*ctx.fillStyle = "#18b6a9";*/
+    ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+    ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+    x += barWidth + 1;
+  }
+}
+/* *********OTRO COLOR DIFERENTE*******
+function renderFrame() {
+  requestAnimationFrame(renderFrame);
+
+  x = 0;
+  analyser.getByteFrequencyData(dataArray);
+  
+  ctx.fillStyle = "#202020";
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+  for (var i = 0; i < bufferLength; i++) {
+    barHeight = dataArray[i];
+    
+    var hue = i / bufferLength * 240;
+    ctx.fillStyle = 'hsl(' + hue + ',50%,' + barHeight/2+'%)';
+
+    ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+    x += barWidth + 1;
+  }
+}*/
