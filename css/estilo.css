@@ -226,6 +226,32 @@ html{
     filter: brightness(50%);
 }
 
+/* SECCION MIS PROYECTOS */
+.proyectos{
+    /*background-color: #e6e6e6;*/
+    background: linear-gradient(#202020 0%, #18b6a9 100%);
+    padding: 100px 0 100px 0;
+    text-align: center;
+}
+.proyectos .contenido-seccion{
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 10px;
+}
+.proyectos .contenido-seccion h2{
+    color: #e6e6e6;
+   /* font-weight: normal;
+    font-size: 25px;
+    margin-top: -10px;
+    letter-spacing: 2px;*/
+}
+.proyectos .contenido-seccion h3{
+    color: #e6e6e6;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+
   /* SECCION REPRODUCTOR */
 .musicplayer *{
     box-sizing: border-box;
@@ -240,7 +266,7 @@ html{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(#202020 0%, #18b6a9 100%);
+    background: linear-gradient(#18b6a9 0%, #e6e6e6 100%);
     padding: 140px 0 100px 0;
     text-align: center;
 }
@@ -484,7 +510,8 @@ html{
 
 /* SECCION RESUMEN */
 .resumen{
-    background-color: #e6e6e6;
+    background: linear-gradient(#e6e6e6 88%, #202020 100%);
+    /*background-color: #e6e6e6;*/
     padding: 140px 0 100px 0;
     text-align: center;
 }
