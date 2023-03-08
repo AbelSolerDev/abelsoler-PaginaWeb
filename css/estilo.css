@@ -807,6 +807,7 @@ html{
         margin: auto;
     }
     .resumen .contenido-seccion .info .col .titulo{
+        width: 95%;
         display: block;
         text-align: center;
     }
