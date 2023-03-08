@@ -272,6 +272,9 @@ html{
     margin-bottom: 20px;
     box-shadow: 0px 6px 10px #18b6a9/*rgba(0,0,0,0.15)*/;
 }
+.proyectos .fila img{
+    box-shadow: 0px 6px 10px #18b6a9/*rgba(0,0,0,0.15)*/;
+}
 .proyectos .fila .trabajo .desc{
     position: absolute;
     top: 0;
@@ -286,7 +289,7 @@ html{
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    color: #18b6a9;
+    color: #196e67;
     font-size:  40px;
 }
 .proyectos .fila .trabajo .desc:hover{
@@ -599,6 +602,8 @@ html{
     width: 45%;
 }
 .resumen .contenido-seccion .info .col .titulo{
+    width: 100%;
+    text-align: center;
     display: inline-block;
     color: #18b6a9;
     font-weight: bold;
@@ -735,8 +740,9 @@ html{
 .contacto .footer .console-underscore{
     display:inline-block;
     position:relative;
-    /*top:-0.14em;*/
-    left:10px;
+    /*top:-0.14em;
+    left:10px;*/
+    text-align: center;
   }
 
 /* SECCION RESPONSIVE */
