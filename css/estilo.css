@@ -343,11 +343,12 @@ html{
         text-transform: uppercase;
         font-size: 30px;
         color: #e6e6e6;
-        padding-bottom: 100px;
+        padding-bottom: -50px;
         z-index: 5;
         /*mix-blend-mode: exclusion;*/
 }
 .musicplayer .wrapper{
+    top: -50px;
     margin: auto;
     width: 380px;
     padding: 25px 30px;
@@ -358,7 +359,6 @@ html{
     box-shadow: 0px 6px 20px #18b6a9/*rgba(0,0,0,0.15)*/;
     font-family: "Abel", sans-serif;
     z-index: 3;
-
 }
 
 .musicplayer .wrapper i{
@@ -778,16 +778,17 @@ html{
     /*frecuenciador de sonido*/
     /*.musicplayer {
         padding-bottom: -300px;
-    }*/
+    }
     .musicplayer #canvas {
         position: absolute;
         left: 0;
         /*margin-top: -50px;*/
-        width: 100%;
+        /*width: 100%;
         height: 90%;
-        /*mix-blend-mode: multiply;*/
-    }
+        mix-blend-mode: multiply;
+    }*/
     .musicplayer .wrapper{
+        top: -50px;
         width: 95%;
         /*text-align: center;
         margin: auto;*/

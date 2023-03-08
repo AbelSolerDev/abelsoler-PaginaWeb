@@ -21,6 +21,29 @@ for(var x = 0; x <links.length;x++){
         menu_visible = false;
     }
 }
+
+
+
+/************ ESTRUCTURA PINTAR LOGOS ************/
+document.addEventListener("DOMContentLoaded", function() {
+  // Selección de todos los elementos img en la página
+  var imagenes = document.querySelectorAll('.habilidades img');
+
+  // Agregar un listener de eventos a cada imagen
+  for (var i = 0; i < imagenes.length; i++) {
+    imagenes[i].addEventListener('mouseover', function() {
+      this.style.filter = "brightness(50%) hue-rotate(100deg)";
+    });
+
+    imagenes[i].addEventListener('mouseout', function() {
+      this.style.filter = "none";
+    });
+  }
+});
+
+
+
+
 /************ ANIMACIÓN FOOTER CONSOLE ************/
 //Introduzco los datos para pasarlos por la función.
 // function([string1, string2],target id,[color1,color2])  
@@ -89,30 +112,6 @@ function mostrarTextoEnConsola(palabras, id, colores) {
     }
   }, 400)
 };
-
-
-
-/************ ESTRUCTURA PINTAR LOGOS ************/
-document.addEventListener("DOMContentLoaded", function() {
-  // Selección de todos los elementos img en la página
-  var imagenes = document.querySelectorAll('.habilidades img');
-
-  // Agregar un listener de eventos a cada imagen
-  for (var i = 0; i < imagenes.length; i++) {
-    imagenes[i].addEventListener('mouseover', function() {
-      this.style.filter = "brightness(50%) hue-rotate(100deg)";
-    });
-
-    imagenes[i].addEventListener('mouseout', function() {
-      this.style.filter = "none";
-    });
-  }
-});
-
-
-
-
-
 
 
 
