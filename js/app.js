@@ -405,7 +405,7 @@ function clicked(element){
 }
 
 
-/**SECCIÓN DE  VISUALIZACIÓN DE FRECUENCIAS*
+/**SECCIÓN DE  VISUALIZACIÓN DE FRECUENCIAS**********
 
 var context = new AudioContext();
 var src = context.createMediaElementSource(mainAudio);

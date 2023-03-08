@@ -34,7 +34,7 @@ html{
     padding: 15px;
     border-radius: 10px;
     text-align: left;
-    z-index: 99;
+    z-index: 1000;
     display: none;
 }
 .inicio .contenido-seccion header nav a{
@@ -251,7 +251,7 @@ html{
     font-size: 30px;
     padding-bottom: 90px;
 }
-/*#porfolio{
+/*#proyectos{
     background-color: #262626;
     margin: 30px 0;
     border-radius: 10px;
@@ -270,6 +270,7 @@ html{
     overflow: hidden;
     position: relative;
     margin-bottom: 20px;
+    box-shadow: 0px 6px 10px #18b6a9/*rgba(0,0,0,0.15)*/;
 }
 .proyectos .fila .trabajo .desc{
     position: absolute;
@@ -317,7 +318,7 @@ html{
     z-index: -1;
 }
 
-/*frecuenciador de sonido*/
+/*frecuenciador de sonido
 .musicplayer #canvas {
     position: absolute;
     margin-top: -40px;
@@ -325,8 +326,8 @@ html{
     width: 30%;
     height: 70%;
     z-index: 0;
-    /*mix-blend-mode: multiply;*/
-}
+    /*mix-blend-mode: multiply;
+}*/
 
 .musicplayer .contenido-seccion{
     max-width: 1000px;
@@ -354,7 +355,7 @@ html{
     position: relative;
     border-radius: 15px;
     background: #e6e6e6;
-    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+    box-shadow: 0px 6px 20px #18b6a9/*rgba(0,0,0,0.15)*/;
     font-family: "Abel", sans-serif;
     z-index: 3;
 
@@ -739,7 +740,7 @@ html{
   }
 
 /* SECCION RESPONSIVE */
-@media screen and (max-width:750px){
+@media screen and (max-width:800px){
     .inicio .contenido-seccion .info h1{
         letter-spacing: 9px;
     }
@@ -770,6 +771,9 @@ html{
     .habilidades .contenido-seccion .fila .col img{
         width: 25%;
         /*text-align: center;*/
+    }
+    .proyectos .fila .trabajo .desc{
+        font-size:medium;
     }
     /*frecuenciador de sonido*/
     /*.musicplayer {
