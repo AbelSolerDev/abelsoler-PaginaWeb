@@ -670,19 +670,19 @@ html{
     border: none;
     margin-bottom: 20px;
     background-color: #196e67;
-    color: #fff;
+    color: #e6e6e6;
     font-size: 18px;
 }
 .contacto button{
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid #fff;
+    border: 2px solid #e6e6e6;
     width: fit-content;
     display: block;
     margin: 20px auto;
     padding: 10px 22px;
     font-size: 16px;
-    color: #fff;
+    color: #e6e6e6;
     position: relative;
     z-index: 10;
 }
@@ -729,7 +729,7 @@ html{
     width:auto;
     display:block;
     /*position:absolute;*/
-    color:white;
+    color:#e6e6e6;
     top:0;
     bottom:0;
     left:0;
@@ -743,10 +743,26 @@ html{
     /*top:-0.14em;
     left:10px;*/
     text-align: center;
-  }
+}
+.contacto .go-up{
+    color:#e6e6e6;
+    cursor: pointer;
+}
+.contacto .go-up i{
+    transform: scale(1.9);
+}
+.contacto .go-up div{
+    font-size: 1.5em;
+}
+
 
 /* SECCION RESPONSIVE */
 @media screen and (max-width:800px){
+    .inicio .contenido-seccion header nav{
+        transform: scale(1.5);
+        top: 9%;
+        margin-left: 20%;
+    }
     .inicio .contenido-seccion .info h1{
         letter-spacing: 9px;
     }
@@ -754,6 +770,7 @@ html{
         font-size: 94%;
         letter-spacing: 2px;
     }
+
     .inicio .contenido-seccion .info h2 span{
         margin-left: 8%;
     }
