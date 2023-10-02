@@ -12,7 +12,7 @@
 
 This is my personal website where I showcase my skills in web development and music composition. Some of the features of this website include:
 
-• A responsive design using HTML5 and CSS
+• A responsive design using HTML5, CSS and JavaScript
 • A sidebar menu with a toggle function using mostrarOcultarMenu()
 • A console typing animation effect using mostrarTextoEnConsola()
 • Customized logos animation using document.addEventListener()
