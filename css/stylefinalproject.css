@@ -1,0 +1,74 @@
+body {
+  background-color: #18b6a9;
+  color: #ffffff;
+}
+.section-title {
+  color: #000000;
+  text-align: left;
+}
+/*MENU*/
+.list-group-item {
+  color: #000000;
+  text-align: left; /* Alinea el texto a la izquierda */
+  list-style: none; /* Elimina el punto de listado */
+  font-size: 1.2rem;
+}
+
+.list-group-item a {
+  text-decoration: none; /* Elimina el subrayado de los hipervínculos */
+  color: inherit; /* Hereda el color del texto normal */
+}
+
+.titulo-seccion {
+  font-family: "Abel", sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* SECCION SOBRE MI */
+.sobremi {
+  background-color: #e6e6e6;
+  padding: 140px 0 100px 0;
+  text-align: center;
+}
+.sobremi .contenido-seccion {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 10px;
+}
+.sobremi .portada-img img {
+  width: 80%;
+  height: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.sobremi .contenido-seccion h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #000000;
+}
+
+/*SECCION INFO*/
+.description-text {
+  margin-left: 20%;
+  margin-right: 10%;
+}
+
+/*FOOTER*/
+.footer {
+  background: linear-gradient(#18b6a9 0%, #202020 50%);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer a {
+  text-decoration: none; /* Elimina el subrayado de los hipervínculos */
+  color: inherit; /* Hereda el color del texto normal */
+  font-family: "Abel", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+}
