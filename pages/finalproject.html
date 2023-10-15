@@ -20,21 +20,52 @@
     <title>Management of Mobil-Homes</title>
   </head>
   <body>
-    <!-- SECCION SOBRE MI -->
-    <section class="sobremi" id="sobremi">
-      <h1 style="font-size: 3em; color: rgb(146, 146, 7)">
-        SECCIÓN EN CONSTRUCCIÓN
-      </h1>
-      <div class="contenido-seccion">
-        <h2 class="titulo-seccion">Management of Mobil-Homes</h2>
-        <h3>Web Application Developer - Final Project</h3>
-        <div class="portada-img">
-          <img
-            src="../img/proyectos/portal-ventas/imagen-portada-mobil-home.jpg"
-            alt="Portada"
-          />
+    <!-- HOME -->
+    <main>
+      <div class="home bd-grid">
+        <div class="home__data">
+          <h1 class="home__title">Management of Mobil-Homes</h1>
+          <span class="home__name"
+            >Web Application Developer - Final Project</span
+          >
+
+          <a
+            href="https://github.com/AbelSolerDev/Final-DAW-Project"
+            class="button"
+            target="_blank"
+            >Acceder al Repositorio de Github</a
+          >
+
+          <div class="home__social">
+            <span class="home__social-name">Sígueme</span>
+            <a href="https://github.com/AbelSolerDev" class="home__social-icon"
+              ><ion-icon name="logo-github"></ion-icon
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/abel-soler-8ba374a0/"
+              class="home__social-icon"
+              target="_blank"
+              ><ion-icon name="logo-linkedin"></ion-icon
+            ></a>
+            <a
+              href="https://abelsoler.es"
+              class="home__social-icon"
+              target="_blank"
+              style="margin-top: -5px"
+              ><i class="fa-regular fa-address-book"></i>
+            </a>
+          </div>
         </div>
 
+        <div class="home__img">
+          <img src="../img/proyectos/portal-ventas/web_developer.png" alt="" />
+        </div>
+      </div>
+    </main>
+
+    <!-- SECCION SOBRE MI -->
+    <section class="table-menu" id="table-menu">
+      <div class="bd-grid">
         <h2 class="section-title">👇 Table of contents</h2>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
@@ -47,48 +78,59 @@
             <a href="#goals">✨ Goals</a>
           </li>
           <li class="list-group-item">
-            <a href="#contact">🌎 Contact</a>
+            <a href="#contact">🌎 Galery</a>
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="container">
+    <section class="container bd-grid">
       <h2 class="section-title" id="project-description">
         🕸️ Project Description
       </h2>
       <div class="description-text">
         <p>
-          The main objective of this project is to create a web application that
-          allows for the easy and accessible sale of mobil-homes for
-          entrepreneurs in the buying and selling sector. Mobil-homes have
-          become an attractive and economical option for many people looking for
-          alternative housing. That's why this project will develop a web
-          application that allows the entrepreneur or sales manager of
-          mobil-homes to easily and accessible publish their products without
-          the need for technical knowledge, including the ability to attach
-          photographs for each product. Additionally, anyone can view the
-          products for sale and those that have already been sold, and
-          registered users can also view discounted products.
+          El objetivo principal de este proyecto es crear una aplicación web que
+          permita la venta fácil y accesible de mobil-homes para empresarios del
+          sector de la compraventa. Los mobil-homes se han convertido en una
+          opción atractiva y económica para muchas personas que buscan viviendas
+          alternativas. Por ello, este proyecto desarrollará una aplicación web
+          que permita al empresario o gestor de ventas de mobil-homes publicar
+          de forma fácil y accesible sus productos sin necesidad de
+          conocimientos técnicos, incluyendo la posibilidad de adjuntar
+          fotografías de cada producto. Además, cualquier persona podrá ver los
+          productos a la venta y los que ya se han vendido, y los usuarios
+          registrados también pueden ver los productos rebajados.
         </p>
+        <div class="img-sales">
+          <img
+            src="../img/proyectos/portal-ventas/SIN SESION/mobil-homes-sales-sin-inicio-sesion.png"
+            alt="portal-ventas"
+            width="100%"
+          />
+        </div>
       </div>
     </section>
 
-    <section class="container">
+    <section class="container bd-grid">
       <h2 class="section-title" id="technologies">🚀 Technologies</h2>
       <ul>
-        <li>Laravel as the PHP framework for web application development.</li>
         <li>
-          HTML, CSS, and Bootstrap for creating the user interface and
-          presenting information.
+          - Laravel como framework PHP para el desarrollo de aplicaciones web.
         </li>
-        <li>MySQL with XAMPP for managing the database.</li>
-        <li>Visual Studio Code as the primary IDE for code development.</li>
         <li>
-          Git as a version control tool to maintain precise control of changes
-          made to the source code.
+          - HTML, CSS y Bootstrap para crear la interfaz de usuario y presentar
+          la información.
         </li>
-        <li>Use of Vitejs.</li>
+        <li>- MySQL con XAMPP para gestionar la base de datos.</li>
+        <li>
+          - Visual Studio Code como IDE principal para el desarrollo de código.
+        </li>
+        <li>
+          - Git como herramienta de control de versiones para mantener un
+          control preciso de los cambios realizados en el código fuente.
+        </li>
+        <li>- Uso de Vite.js.</li>
       </ul>
       <p align="center">
         <a href="https://laravel.com" target="_blank"
@@ -108,86 +150,70 @@
       </p>
     </section>
 
-    <section class="container">
+    <section class="container bd-grid">
       <h2 class="section-title" id="goals">✨ Goals</h2>
       <ul>
-        <li>Implement the Model-View-Controller within the project.</li>
+        <li>- Implementar el Modelo-Vista-Controlador en el proyecto.</li>
         <li>
-          Develop an attractive and easy-to-use graphical interface for the user
-          to improve the user experience in using the application.
+          - Desarrollar una interfaz gráfica atractiva y fácil de usar para el
+          usuario con el fin de mejorar la experiencia del usuario al usar la
+          aplicación.
         </li>
         <li>
-          Add a browser with the functionality of registering new users or
-          logging in for registered users.
+          - Agregar un navegador con la funcionalidad de registrar nuevos
+          usuarios o iniciar sesión para los usuarios registrados.
         </li>
         <li>
-          Depending on whether the initiated session is an administrator or a
-          regular user, a new and independent section will be enabled. The
-          administrator will have access to the "Administrator" section, and the
-          user will see the "My Account" section.
+          - Dependiendo de si la sesión iniciada es de un administrador o un
+          usuario regular, se habilitará una sección nueva e independiente. El
+          administrador tendrá acceso a la sección "Administrador", y el usuario
+          verá la sección "Mi Cuenta".
         </li>
         <li>
-          Add the "About Us" and "Contact" sections to the initial idea to
-          complete the application.
+          - Agregar las secciones "Sobre Nosotros" y "Contacto" a la idea
+          inicial para completar la aplicación.
         </li>
         <li>
-          Develop a tool that facilitates the management of product
-          commercialization by the administrator.
+          - Desarrollar una herramienta que facilite la gestión de la
+          comercialización de productos por parte del administrador.
         </li>
         <li>
-          Develop functionality so that the administrator can easily create,
-          edit or delete their products, including the ability to attach or
-          remove photographs and categorize products based on whether they are
-          discounted or not.
+          - Desarrollar funcionalidades para que el administrador pueda crear,
+          editar o eliminar fácilmente sus productos, incluyendo la capacidad de
+          adjuntar o eliminar fotografías y categorizar los productos en función
+          de si están descontados o no.
         </li>
         <li>
-          Develop a secondary section for the administrator to view, create,
-          edit, or delete users who use the application.
+          - Desarrollar una sección adicional para que el administrador pueda
+          ver, crear, editar o eliminar usuarios que utilizan la aplicación.
         </li>
         <li>
-          Add a logical order in the presentation of mobile homes so that those
-          that are sold are blocked and located at the end of the list.
+          - Agregar un orden lógico en la presentación de las viviendas móviles
+          para que las que se han vendido estén bloqueadas y ubicadas al final
+          de la lista.
         </li>
         <li>
-          Develop functionality so that registered users can view discounted
-          products.
+          - Desarrollar funcionalidades para que los usuarios registrados puedan
+          ver productos con descuento.
         </li>
         <li>
-          Implement security measures to protect incoming HTTP requests from
-          Cross-Site Request Forgery (CSRF) attacks regarding the database.
+          - Implementar medidas de seguridad para proteger las solicitudes HTTP
+          entrantes de ataques de Falsificación de Petición entre Sitios (CSRF)
+          en relación a la base de datos.
         </li>
       </ul>
     </section>
 
-    <section class="container">
-      <h2 class="section-title" id="contact">🌎 Contact</h2>
+    <section class="container bd-grid">
+      <h2 class="section-title" id="contact">🌎 Galery</h2>
       <p>
         If you have some doubts or need to ask something about the project, feel
         free to reach me here:
       </p>
-      <ul>
-        <li>
-          GitHub:
-          <a href="https://github.com/AbelSolerDev" target="_blank"
-            >https://github.com/AbelSolerDev</a
-          >
-        </li>
-        <li>
-          LinkedIn:
-          <a
-            href="https://www.linkedin.com/in/abel-soler-8ba374a0/"
-            target="_blank"
-            >https://www.linkedin.com/in/abel-soler-8ba374a0/</a
-          >
-        </li>
-        <li>
-          My Web:
-          <a href="https://abelsoler.es" target="_blank"
-            >https://abelsoler.es</a
-          >
-        </li>
-      </ul>
     </section>
+
+    <!-- Script Ionicons-->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </body>
 
   <footer>
