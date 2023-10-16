@@ -46,7 +46,7 @@
 body {
   margin: var(--header-height) 0 0 0;
   color: var(--color-text);
-  background-color: var(--color-secondary);
+  background: linear-gradient(#1d2063 0%, white 90%);
   font-family: var(--body-font);
 }
 ul {
@@ -74,6 +74,7 @@ img {
   margin-left: 1rem;
   margin-right: 1rem;
   align-items: center;
+  margin-bottom: 3rem;
 }
 /*.l-header {
   width: 100%;
@@ -109,7 +110,7 @@ img {
 }
 
 .table-menu {
-  display: grid;
+  /*display: grid;*/
   background-color: var(--color-first);
   font-family: var(--heading-font);
   padding: 3rem 5% 6rem 5%;
@@ -117,7 +118,7 @@ img {
 .table-menu h2 {
   font-size: var(--h1-font-size);
   font-family: var(--heading-font);
-  color: var(--color-text);
+  color: var(--color-secondary) !important;
 }
 
 .table-menu .list-group-item a {
@@ -138,13 +139,45 @@ img {
   padding-top: 5rem;
   padding-bottom: 2rem;
 }
+
+.container h2 {
+  font-size: var(--h1-font-size);
+}
 .container .img-sales {
-  margin-top: 50px;
-  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+.container .img-sales img {
+  width: 70%;
   height: 100%;
   /*object-fit: cover;*/
-  object-position: center;
   box-shadow: 5px 5px 10px var(--color-first); /*rgba(0, 0, 0, 0.2)*/
+  cursor: pointer;
+}
+.container .img-sales2 {
+  margin-top: 30px;
+  display: flex;
+}
+.container .img-sales2 img {
+  margin-right: 2%;
+  width: 50%;
+  height: 100%;
+  /*object-fit: cover;*/
+  cursor: pointer;
+  box-shadow: 5px 5px 10px var(--color-first); /*rgba(0, 0, 0, 0.2)*/
+}
+
+#galery {
+  background: linear-gradient(#ffffff 80%, #18b6a9 100%);
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -10px;
+}
+
+.container-goals li {
+  margin-top: 20px;
 }
 
 /*@media screen and (max-width: 768px) {
@@ -260,10 +293,11 @@ img {
 
 /*FOOTER*/
 .footer {
-  background: linear-gradient(#202020 0%, #18b6a9 100%);
+  background: linear-gradient(#18b6a9 0%, #202020 100%);
   padding: 50px 0;
   text-align: center;
-  margin-top: 3em;
+  /*margin-top: 3em;*/
+  /*margin-top: -50px;*/
 }
 
 .footer a {
@@ -272,4 +306,61 @@ img {
   font-family: "Abel", sans-serif;
   font-size: 1.5em;
   font-weight: bold;
+}
+.footer a:hover {
+  color: #ea4c89;
+  text-shadow: #1d2063;
+}
+
+/* Estilo para el modal */
+.modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed; /* Posición fija para que cubra toda la pantalla */
+  z-index: 1; /* Establecer la capa más alta */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Habilitar el desplazamiento */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+}
+
+/* Estilo para la imagen en el modal */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  margin-top: 79px;
+}
+
+/* Estilo para el botón de cerrar */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Estilo para el botón de cerrar al pasar el mouse */
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para el pie de foto */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
 }

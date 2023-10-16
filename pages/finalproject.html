@@ -17,6 +17,8 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+JWsySxkd9zzveUZSdK1pd9l89UZiP9YGLFznPnpMRKSl2pD"
       crossorigin="anonymous"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>Management of Mobil-Homes</title>
   </head>
   <body>
@@ -78,142 +80,311 @@
             <a href="#goals">✨ Goals</a>
           </li>
           <li class="list-group-item">
-            <a href="#contact">🌎 Galery</a>
+            <a href="#contact">📷 Galery</a>
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="container bd-grid">
-      <h2 class="section-title" id="project-description">
-        🕸️ Project Description
-      </h2>
-      <div class="description-text">
-        <p>
-          El objetivo principal de este proyecto es crear una aplicación web que
-          permita la venta fácil y accesible de mobil-homes para empresarios del
-          sector de la compraventa. Los mobil-homes se han convertido en una
-          opción atractiva y económica para muchas personas que buscan viviendas
-          alternativas. Por ello, este proyecto desarrollará una aplicación web
-          que permita al empresario o gestor de ventas de mobil-homes publicar
-          de forma fácil y accesible sus productos sin necesidad de
-          conocimientos técnicos, incluyendo la posibilidad de adjuntar
-          fotografías de cada producto. Además, cualquier persona podrá ver los
-          productos a la venta y los que ya se han vendido, y los usuarios
-          registrados también pueden ver los productos rebajados.
+    <section
+      class="container"
+      style="background-color: rgb(0, 0, 0); max-width: none"
+    >
+      <div class="bd-grid">
+        <h2 class="section-title" id="project-description">
+          🕸️ Project Description
+        </h2>
+        <div class="description-text">
+          <p>
+            El objetivo principal de este proyecto es crear una aplicación web
+            que permita la venta fácil y accesible de mobil-homes para
+            empresarios del sector de la compraventa. Los mobil-homes se han
+            convertido en una opción atractiva y económica para muchas personas
+            que buscan viviendas alternativas. Por ello, este proyecto
+            desarrollará una aplicación web que permita al empresario o gestor
+            de ventas de mobil-homes publicar de forma fácil y accesible sus
+            productos sin necesidad de conocimientos técnicos, incluyendo la
+            posibilidad de adjuntar fotografías de cada producto. Además,
+            cualquier persona podrá ver los productos a la venta y los que ya se
+            han vendido, y los usuarios registrados también pueden ver los
+            productos rebajados.
+          </p>
+          <div class="img-sales">
+            <img
+              src="../img/proyectos/portal-ventas/SIN SESION/mobil-homes-sales-sin-inicio-sesion.png"
+              alt="portal-ventas"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="container"
+      style="background-color: whitesmoke; color: black; max-width: none"
+    >
+      <div class="bd-grid">
+        <h2 class="section-title" id="technologies">🚀 Technologies</h2>
+        <ul>
+          <li>
+            - Laravel como framework PHP para el desarrollo de aplicaciones web.
+          </li>
+          <li>
+            - HTML, CSS y Bootstrap para crear la interfaz de usuario y
+            presentar la información.
+          </li>
+          <li>- MySQL con XAMPP para gestionar la base de datos.</li>
+          <li>
+            - Visual Studio Code como IDE principal para el desarrollo de
+            código.
+          </li>
+          <li>
+            - Git como herramienta de control de versiones para mantener un
+            control preciso de los cambios realizados en el código fuente.
+          </li>
+          <li>- Uso de Vite.js.</li>
+        </ul>
+        <p align="center">
+          <a href="https://laravel.com" target="_blank"
+            ><img
+              src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg"
+              width="400"
+              alt="Laravel Logo"
+          /></a>
+          <a
+            href="https://es.vitejs.dev/guide/backend-integration"
+            target="_blank"
+            ><img
+              src="https://es.vitejs.dev/logo-with-shadow.png"
+              width="200"
+              alt="vite Logo"
+          /></a>
         </p>
-        <div class="img-sales">
+      </div>
+    </section>
+
+    <section
+      class="container container-goals"
+      style="background-color: rgb(0, 0, 0); max-width: none"
+    >
+      <div class="bd-grid">
+        <h2 class="section-title" id="goals">✨ Goals</h2>
+        <ul>
+          <li>- Implementar el Modelo-Vista-Controlador en el proyecto.</li>
+          <li>
+            - Desarrollar una interfaz gráfica atractiva y fácil de usar para el
+            usuario con el fin de mejorar la experiencia del usuario al usar la
+            aplicación.
+          </li>
+          <li>
+            - Agregar un navegador con la funcionalidad de registrar nuevos
+            usuarios o iniciar sesión para los usuarios registrados.
+            <div class="img-sales">
+              <img
+                src="../img/proyectos/portal-ventas/SESION ADMIN/credenciales-mobil-homes-admin.png"
+                alt="portal-ventas"
+                width="50%"
+              />
+            </div>
+          </li>
+          <li>
+            - Dependiendo de si la sesión iniciada es de un administrador o un
+            usuario regular, se habilitará una sección nueva e independiente. El
+            administrador tendrá acceso a la sección "Administrador", y el
+            usuario verá la sección "Mi Cuenta".
+            <div class="img-sales2">
+              <img
+                src="../img/proyectos/portal-ventas/SESION ADMIN/show-mobil-homes-admin.png"
+                alt="portal-ventas"
+                width="50%"
+              />
+              <img
+                src="../img/proyectos/portal-ventas/SESION USUARIO/account-descount-mobil-homes-user.png"
+                alt="portal-ventas"
+                width="50%"
+              />
+            </div>
+          </li>
+          <li>
+            - Agregar las secciones "Sobre Nosotros" y "Contacto" a la idea
+            inicial para completar la aplicación.
+          </li>
+          <li>
+            - Desarrollar una herramienta que facilite la gestión de la
+            comercialización de productos por parte del administrador.
+            <div class="img-sales">
+              <img
+                src="../img/proyectos/portal-ventas/SESION ADMIN/crud-mobil-homes-admin.png"
+                alt="portal-ventas"
+                width="50%"
+              />
+            </div>
+          </li>
+          <li>
+            - Desarrollar funcionalidades para que el administrador pueda crear,
+            editar o eliminar fácilmente sus productos, incluyendo la capacidad
+            de adjuntar o eliminar fotografías y categorizar los productos en
+            función de si están descontados o no.
+            <div class="img-sales">
+              <img
+                src="../img/proyectos/portal-ventas/SESION ADMIN/update-mobil-homes-admin.png"
+                alt="portal-ventas"
+                width="50%"
+              />
+            </div>
+          </li>
+          <li>
+            - Desarrollar una sección adicional para que el administrador pueda
+            ver, crear, editar o eliminar usuarios que utilizan la aplicación.
+            <div class="img-sales">
+              <img
+                src="../img/proyectos/portal-ventas/SESION ADMIN/crud-users-mobil-homes-admin.png"
+                alt="portal-ventas"
+                width="50%"
+              />
+            </div>
+          </li>
+          <li>
+            - Agregar un orden lógico en la presentación de las viviendas
+            móviles para que las que se han vendido estén bloqueadas y ubicadas
+            al final de la lista.
+          </li>
+          <li>
+            - Desarrollar funcionalidades para que los usuarios registrados
+            puedan ver productos con descuento.
+          </li>
+          <li>
+            - Implementar medidas de seguridad para proteger las solicitudes
+            HTTP entrantes de ataques de Falsificación de Petición entre Sitios
+            (CSRF) en relación a la base de datos.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section
+      class="container"
+      id="galery"
+      style="color: black; max-width: none"
+    >
+      <div class="bd-grid">
+        <h2 class="section-title">📷 Galery</h2>
+        <p>
+          A continuación te muestro más capturas del proyecto, indicar que
+          próximamente desplegaré el proyecto en un servidor para que puedas
+          verlo en vivo.
+        </p>
+        <div class="img-sales2">
           <img
-            src="../img/proyectos/portal-ventas/SIN SESION/mobil-homes-sales-sin-inicio-sesion.png"
+            src="../img/proyectos/portal-ventas/about-us-mobil-homes.png"
             alt="portal-ventas"
-            width="100%"
+            width="50%"
+          />
+          <img
+            src="../img/proyectos/portal-ventas/contact-mobil-homes.png"
+            alt="portal-ventas"
+            width="50%"
+          />
+        </div>
+        <div class="img-sales2">
+          <img
+            src="../img/proyectos/portal-ventas/SESION ADMIN/add-mobil-homes-admin.png"
+            alt="portal-ventas"
+            width="50%"
+          />
+          <img
+            src="../img/proyectos/portal-ventas/SESION ADMIN/add-users-mobil-homes-admin.png"
+            alt="portal-ventas"
+            width="50%"
+          />
+        </div>
+        <div class="img-sales2">
+          <img
+            src="../img/proyectos/portal-ventas/SESION USUARIO/show-descount-mobil-homes-user.png"
+            alt="portal-ventas"
+            width="50%"
+          />
+          <img
+            src="../img/proyectos/portal-ventas/SESION USUARIO/update-account-descount-mobil-homes-user.png"
+            alt="portal-ventas"
+            width="50%"
+          />
+        </div>
+        <div class="img-sales2">
+          <img
+            src="../img/proyectos/portal-ventas/SIN SESION/mobil-homes-sales-product-sin-inicio-sesion.png"
+            alt="portal-ventas"
+            width="50%"
+          />
+          <img
+            src="../img/proyectos/portal-ventas/SESION ADMIN/show-mobil-homes-admin.png"
+            alt="portal-ventas"
+            width="50%"
           />
         </div>
       </div>
     </section>
 
-    <section class="container bd-grid">
-      <h2 class="section-title" id="technologies">🚀 Technologies</h2>
-      <ul>
-        <li>
-          - Laravel como framework PHP para el desarrollo de aplicaciones web.
-        </li>
-        <li>
-          - HTML, CSS y Bootstrap para crear la interfaz de usuario y presentar
-          la información.
-        </li>
-        <li>- MySQL con XAMPP para gestionar la base de datos.</li>
-        <li>
-          - Visual Studio Code como IDE principal para el desarrollo de código.
-        </li>
-        <li>
-          - Git como herramienta de control de versiones para mantener un
-          control preciso de los cambios realizados en el código fuente.
-        </li>
-        <li>- Uso de Vite.js.</li>
-      </ul>
-      <p align="center">
-        <a href="https://laravel.com" target="_blank"
-          ><img
-            src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg"
-            width="400"
-            alt="Laravel Logo"
-        /></a>
-        <a
-          href="https://es.vitejs.dev/guide/backend-integration"
-          target="_blank"
-          ><img
-            src="https://es.vitejs.dev/logo-with-shadow.png"
-            width="200"
-            alt="vite Logo"
-        /></a>
-      </p>
-    </section>
-
-    <section class="container bd-grid">
-      <h2 class="section-title" id="goals">✨ Goals</h2>
-      <ul>
-        <li>- Implementar el Modelo-Vista-Controlador en el proyecto.</li>
-        <li>
-          - Desarrollar una interfaz gráfica atractiva y fácil de usar para el
-          usuario con el fin de mejorar la experiencia del usuario al usar la
-          aplicación.
-        </li>
-        <li>
-          - Agregar un navegador con la funcionalidad de registrar nuevos
-          usuarios o iniciar sesión para los usuarios registrados.
-        </li>
-        <li>
-          - Dependiendo de si la sesión iniciada es de un administrador o un
-          usuario regular, se habilitará una sección nueva e independiente. El
-          administrador tendrá acceso a la sección "Administrador", y el usuario
-          verá la sección "Mi Cuenta".
-        </li>
-        <li>
-          - Agregar las secciones "Sobre Nosotros" y "Contacto" a la idea
-          inicial para completar la aplicación.
-        </li>
-        <li>
-          - Desarrollar una herramienta que facilite la gestión de la
-          comercialización de productos por parte del administrador.
-        </li>
-        <li>
-          - Desarrollar funcionalidades para que el administrador pueda crear,
-          editar o eliminar fácilmente sus productos, incluyendo la capacidad de
-          adjuntar o eliminar fotografías y categorizar los productos en función
-          de si están descontados o no.
-        </li>
-        <li>
-          - Desarrollar una sección adicional para que el administrador pueda
-          ver, crear, editar o eliminar usuarios que utilizan la aplicación.
-        </li>
-        <li>
-          - Agregar un orden lógico en la presentación de las viviendas móviles
-          para que las que se han vendido estén bloqueadas y ubicadas al final
-          de la lista.
-        </li>
-        <li>
-          - Desarrollar funcionalidades para que los usuarios registrados puedan
-          ver productos con descuento.
-        </li>
-        <li>
-          - Implementar medidas de seguridad para proteger las solicitudes HTTP
-          entrantes de ataques de Falsificación de Petición entre Sitios (CSRF)
-          en relación a la base de datos.
-        </li>
-      </ul>
-    </section>
-
-    <section class="container bd-grid">
-      <h2 class="section-title" id="contact">🌎 Galery</h2>
-      <p>
-        If you have some doubts or need to ask something about the project, feel
-        free to reach me here:
-      </p>
-    </section>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01" />
+      <div id="caption"></div>
+    </div>
 
     <!-- Script Ionicons-->
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+    <!-- Script -->
+    <script>
+      // Función para abrir la imagen en el modal
+      function openImage(imgElement) {
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+        captionText.innerHTML = imgElement.alt;
+      }
+
+      // Obtén el modal y los elementos necesarios
+      var modal = document.getElementById("myModal");
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+
+      // Obtén todas las imágenes en la clase .img-sales2
+      var images = document.querySelectorAll(".img-sales2 img, .img-sales img");
+
+      // Asigna un evento click a cada imagen
+      images.forEach(function (img) {
+        img.addEventListener("click", function () {
+          openImage(img);
+        });
+      });
+
+      // Obtén el elemento <span> que cierra el modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // Cuando el usuario hace clic en <span> (x), cierra el modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      modal.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+      function openImage(imgElement) {
+        modal.style.display = "block";
+        modalImg.src = imgElement.src;
+        captionText.innerHTML = imgElement.alt;
+
+        // Agregar evento para cerrar el modal al presionar "esc"
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            modal.style.display = "none";
+          }
+        });
+      }
+    </script>
   </body>
 
   <footer>
