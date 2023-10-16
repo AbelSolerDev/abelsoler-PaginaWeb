@@ -46,7 +46,7 @@
 body {
   margin: var(--header-height) 0 0 0;
   color: var(--color-text);
-  background: linear-gradient(#1d2063 0%, white 90%);
+  background: linear-gradient(#1d2063 0%, #7376a8 45%, #1d2063 80%);
   font-family: var(--body-font);
 }
 ul {
@@ -363,4 +363,33 @@ img {
   color: #ccc;
   padding: 10px 0;
   height: 150px;
+}
+
+/* Estilo del botón */
+.back-button {
+  text-align: center;
+  background-color: #8b3d7c; /* Color de fondo del botón */
+  color: #fff; /* Color del texto */
+  border: none;
+  padding: 10px 20px; /* Espaciado interno del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Transición de colores */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Estilo del botón en hover */
+.back-button:hover {
+  background: linear-gradient(
+    #8b3d7c 50%,
+    #1d2063 100%
+  ); /* Color de fondo en hover */
+  color: #fff; /* Color del texto en hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra en hover */
+  transition-duration: 0.5s;
 }
